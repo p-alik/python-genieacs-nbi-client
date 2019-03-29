@@ -1,7 +1,7 @@
-"""python_genieacs_nbi_client.genieacs.nbi.client."""
+"""python_genieacs_nbi_client.client."""
 
 import urllib.request
-from genieacs.nbi.utils import build_request, build_post_request
+from python_genieacs_nbi_client.utils import build_request, build_post_request
 
 
 class Client:
@@ -12,7 +12,7 @@ class Client:
     verbose = False
 
     def __init__(self, **kwargs):
-        """Initialize genieacs.nbi.client.Client."""
+        """Initialize python_genieacs_nbi_client.Client."""
         for key, value in kwargs.items():
             setattr(self, key, value)
 

@@ -1,29 +1,29 @@
 """python_genieacs_nbi_client."""
 
 import unittest
-import genieacs.nbi.client
+from python_genieacs_nbi_client import client
 
 
 class Test(unittest.TestCase):
-    """Unit tests for genieacs.nbi.client.Client."""
+    """Unit tests for client.Client."""
     @classmethod
     def setUpClass(cls):
-        cls.instance = genieacs.nbi.client.Client()
+        cls.instance = client.Client()
 
     def setUp(self):
-        self.assertIsInstance(self.instance, genieacs.nbi.client.Client)
+        self.assertIsInstance(self.instance, client.Client)
 
     def test_properties(self):
-        """Test genieacs.nbi.client.Client properties"""
+        """Test Client properties"""
         self.assertEqual(self.instance.address, 'http://localhost:7557')
         self.assertFalse(self.instance.verbose)
         args = {"verbose": True, "address": "http://foo.bar"}
-        nbic = genieacs.nbi.client.Client(**args)
+        nbic = client.Client(**args)
         self.assertTrue(nbic.verbose)
         self.assertEqual(nbic.address, args["address"])
 
     def test_url(self):
-        """Test genieacs.nbi.client.Client.url()"""
+        """Test Client.url()"""
         suffix = "foo"
         self.assertEqual(self.instance.url(suffix),
                          "/".join([self.instance.address, suffix]))
@@ -32,24 +32,24 @@ class Test(unittest.TestCase):
         self.assertEqual(self.instance.url(suffix, *args), url)
 
     @unittest.skip(
-        "skip genieacs.nbi.client.Client.dispatch_device_task() yet")
+        "skip Client.dispatch_device_task()")
     def test_dispatch_device_task(self):
-        "Test genieacs.nbi.client.Client.dispatch_device_task()"
+        "Test Client.dispatch_device_task()"
         pass
 
-    @unittest.skip("skip genieacs.nbi.client.Client.perform_request() yet")
+    @unittest.skip("skip Client.perform_request()")
     def test_perform_request(self):
-        "Test genieacs.nbi.client.Client.perform_request()"
+        "Test Client.perform_request()"
         pass
 
-    @unittest.skip("skip genieacs.nbi.client.Client.reboot() yet")
+    @unittest.skip("skip Client.reboot() yet")
     def test_reboot(self):
-        "Test genieacs.nbi.client.Client.reboot()"
+        "Test Client.reboot()"
         pass
 
-    @unittest.skip("skip genieacs.nbi.client.Client.refresh_object() yet")
+    @unittest.skip("skip Client.refresh_object()")
     def test_refresh_object(self):
-        "Test genieacs.nbi.client.Client.refresh_object()"
+        "Test Client.refresh_object()"
         pass
 
 

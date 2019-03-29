@@ -2,14 +2,14 @@
 
 import unittest
 from os import getpid
-from genieacs.nbi.utils import build_request, build_post_request
+from python_genieacs_nbi_client.utils import build_request, build_post_request
 
 
 class Test(unittest.TestCase):
     """Unit tests for genieacs.nbi.utils."""
 
     def test_build_request(self):
-        """Test genieacs.nbi.utils..build_request()"""
+        """Test python_genieacs_nbi_client.utils.build_request()"""
         for method in ("POST", "DELETE", "PUT"):
             _url = "/".join(["http://xyz", method])
             data = {"foo": getpid(), "method": method}
@@ -24,7 +24,7 @@ class Test(unittest.TestCase):
         self.assertIsNone(req.data)
 
     def test_build_post_request(self):
-        """Test genieacs.nbi.client.build_post_request()."""
+        """Test python_genieacs_nbi_client.utils.build_post_request()."""
         _url = "/".join(["http://xyz", "abc"])
         data = {"foo": getpid()}
         req = build_post_request(url=_url, data=data)
