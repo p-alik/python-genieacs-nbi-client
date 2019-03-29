@@ -1,5 +1,6 @@
 """python_genieacs_nbi_client.client."""
 
+from typing import Dict, List
 import urllib.request
 from python_genieacs_nbi_client.utils import build_request, build_post_request
 
@@ -37,6 +38,19 @@ class Client:
         url = "/".join([self.devices_url(device_id),
                         "tasks?connection_request"])
         req = build_post_request(url=url, data=data)
+        return self.perform_request(req)
+
+    def dispatch_preset(
+            self,
+            weight: int,
+            preconditions: Dict,
+            configurations: List[Dict]):
+        """Prepare and execute add preset request."""
+        data = {
+            "weight": weight,
+            "preconditions": preconditions,
+            "configurations": configurations}
+        req = build_post_request(url=self.url("presets"), data=data)
         return self.perform_request(req)
 
     def reboot(self, device_id):
