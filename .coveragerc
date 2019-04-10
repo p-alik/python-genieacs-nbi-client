@@ -1,5 +1,5 @@
 [run]
-include =
-    python_genieacs_nbi_client/*
+source =
+    python_genieacs_nbi_client
 omit =
     python_genieacs_nbi_client/tests/*
