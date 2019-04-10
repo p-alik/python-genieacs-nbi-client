@@ -2,7 +2,7 @@
  python-genieacs-nbi-client
 ============================
 
-TODO: Rewrite me. Append your package's long description.
+The package contains Rest API client implementation to communicate with [genieacs](https://github.com/genieacs/genieacs/) NBI.
 
 
 
@@ -11,10 +11,6 @@ Requirements
 
 * Python 3.5 over
 
-Features
-========
-
-* ToDo: Rewrite me.
 
 Setup
 =====
@@ -28,13 +24,11 @@ Setup
 Usage
 =====
 
-ToDo: Rewrite me.
-
 ::
 
   $ python
-  >>> import python_genieacs_nbi_client
-  >>> python_genieacs_nbi_client.sample.hello()
-  'hello'
+  >>> from python_genieacs_nbi_client import client
+  >>> cl = client.Client("verbose": True, "address": "http://foo.bar")
+  >>> nbi_resp_js = cl.dispatch_device_task(DEVICE_ID, {"name":"setParameterValues", "parameterValues":[["InternetGatewayDevice.ManagementServer.PeriodicInformEnable", 300, "xsd:int"]]})
   >>>
 
