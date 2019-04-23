@@ -7,21 +7,14 @@ sudo: true
 env:
   - TOX_ENV=py35
 install:
-  - pip install 'tox~=3.2.0' --force-reinstall
-#   - pip install pytest-flakes
-#   - pip install pytest-cov
-#   - pip install pytest-pylint
-#   - pip install pytest-random
-#   - pip install virtualenv
-  - pip install 'pytest~=3.7.0' --force-reinstall
+  - pip install tox
 
 script:
-  - pytest --version
   - tox --version
   - tox --recreate -e $TOX_ENV
   - python setup.py check -r
-# after_success:
-#   - coveralls --verbose
+after_success:
+  - coveralls --verbose
 
 matrix:
   include:
