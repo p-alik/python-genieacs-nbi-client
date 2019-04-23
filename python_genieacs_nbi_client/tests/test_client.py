@@ -35,22 +35,18 @@ class Test(unittest.TestCase):
         "skip Client.dispatch_device_task()")
     def test_dispatch_device_task(self):
         "Test Client.dispatch_device_task()"
-        pass
 
     @unittest.skip("skip Client.perform_request()")
     def test_perform_request(self):
         "Test Client.perform_request()"
-        pass
 
     @unittest.skip("skip Client.reboot() yet")
     def test_reboot(self):
         "Test Client.reboot()"
-        pass
 
     @unittest.skip("skip Client.refresh_object()")
     def test_refresh_object(self):
         "Test Client.refresh_object()"
-        pass
 
 
 if __name__ == "__main__":
