@@ -2,7 +2,7 @@
  python-genieacs-nbi-client
 ============================
 
-The package contains Rest API client implementation to communicate with [genieacs](https://github.com/genieacs/genieacs/) NBI.
+The package contains Rest API client implementation to communicate with `GenieACS NBI <https://github.com/genieacs/genieacs/>`_.
 
 
 
