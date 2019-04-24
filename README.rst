@@ -4,6 +4,13 @@
 
 The package contains Rest API client implementation to communicate with `GenieACS NBI <https://github.com/genieacs/genieacs/>`_.
 
+|travis-badge|_ |coveralls-badge|_
+
+.. |travis-badge| image:: https://travis-ci.org/p-alik/python-genieacs-nbi-client.svg?branch=master
+.. _travis-badge: https://travis-ci.org/p-alik/python-genieacs-nbi-client
+
+.. |coveralls-badge| image:: https://coveralls.io/repos/github/p-alik/python-genieacs-nbi-client/badge.svg?branch=master
+.. _coveralls-badge: https://coveralls.io/github/p-alik/python-genieacs-nbi-client?branch=master
 
 
 Requirements
