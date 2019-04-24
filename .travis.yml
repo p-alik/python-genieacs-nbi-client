@@ -8,6 +8,7 @@ env:
   - TOX_ENV=py35
 install:
   - pip install tox
+  - pip install coveralls
 
 script:
   - tox --version
