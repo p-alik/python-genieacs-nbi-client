@@ -3,6 +3,7 @@
 
 import os
 import sys
+from setuptools import find_packages
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
@@ -57,7 +58,7 @@ extras_require = {
 if os.environ.get('READTHEDOCS', None):
     extras_require['reST'].append('recommonmark')
 
-setup(name='python-genieacs-nbi-client',
+setup(name='genieacs-nbi-client',
       version='0.1.0',
       description='HTTP Client for GenieACS API',
       long_description=long_description,
@@ -65,7 +66,7 @@ setup(name='python-genieacs-nbi-client',
       author_email='info@maximka.de',
       url='https://github.com/p-alik/python-genieacs-nbi-client',
       classifiers=classifiers,
-      packages=['python_genieacs_nbi_client'],
+      packages=find_packages(exclude=["*.tests"]),
       data_files=[],
       install_requires=requires,
       include_package_data=True,

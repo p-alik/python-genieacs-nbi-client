@@ -1,5 +1,5 @@
 [run]
 source =
-    python_genieacs_nbi_client
+    genieacs.nbi
 omit =
-    python_genieacs_nbi_client/tests/*
+    genieacs/tests/*

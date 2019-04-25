@@ -24,9 +24,9 @@ Setup
 
 ::
 
-  $ python -m pip install --user python-genieacs-nbi-client
+  $ python -m pip install --user genieacs-nbi-client
   or
-  (venv)$ python -m pip install python-genieacs-nbi-client
+  (venv)$ python -m pip install genieacs-nbi-client
 
 Usage
 =====
@@ -34,8 +34,8 @@ Usage
 ::
 
   $ python
-  >>> from python_genieacs_nbi_client import client
-  >>> cl = client.Client("verbose": True, "address": "http://foo.bar")
+  >>> from genieacs.nbi import client
+  >>> cl = client.Client(verbose=True, address="http://foo.bar")
   >>> nbi_resp_js = cl.dispatch_device_task(DEVICE_ID, {"name":"setParameterValues", "parameterValues":[["InternetGatewayDevice.ManagementServer.PeriodicInformEnable", 300, "xsd:int"]]})
   >>>
 

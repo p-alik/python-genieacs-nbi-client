@@ -1,4 +1,4 @@
-"""python_genieacs_nbi_client.utils."""
+"""genieacs.nbi.utils."""
 import json
 import urllib.request
 

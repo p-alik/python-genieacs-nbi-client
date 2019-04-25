@@ -4,7 +4,7 @@ References
 .. toctree::
    :maxdepth: 2
 
-.. automodule:: python_genieacs_nbi_client.sample
+.. automodule:: genieacs_nbi_client.sample
    :members:
    :show-inheritance:
    :inherited-members:

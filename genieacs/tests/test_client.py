@@ -1,7 +1,7 @@
-"""python_genieacs_nbi_client."""
+"""genieacs.test."""
 
 import unittest
-from python_genieacs_nbi_client import client
+from genieacs.nbi import client
 
 
 class Test(unittest.TestCase):
@@ -15,7 +15,9 @@ class Test(unittest.TestCase):
 
     def test_properties(self):
         """Test Client properties"""
-        self.assertEqual(self.instance.address, 'http://localhost:7557')
+        self.assertEqual(
+            self.instance.address,
+            'http://localhost:7557')
         self.assertFalse(self.instance.verbose)
         args = {"verbose": True, "address": "http://foo.bar"}
         nbic = client.Client(**args)
@@ -28,14 +30,15 @@ class Test(unittest.TestCase):
         self.assertEqual(self.instance.url(suffix),
                          "/".join([self.instance.address, suffix]))
         args = ("bar", 1, 2)
-        url = "/".join(["{}", suffix]).format(self.instance.address, *args)
+        url = "/".join(["{}", suffix]
+                       ).format(self.instance.address, *args)
         self.assertEqual(self.instance.url(suffix, *args), url)
 
     def test_devices_url(self):
         """Test Client.url()"""
         device_id = "xyz-123"
-        self.assertEqual(self.instance.devices_url(device_id),
-                         "/".join([self.instance.address, "devices", device_id]))
+        url = "/".join([self.instance.address, "devices", device_id])
+        self.assertEqual(self.instance.devices_url(device_id), url)
 
     @unittest.skip(
         "skip Client.dispatch_device_task()")

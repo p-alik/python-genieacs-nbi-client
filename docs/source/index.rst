@@ -7,7 +7,6 @@ Contents:
    :maxdepth: 2
 
    README
-   modules/index
 
 .. ##### ToDo: Rewrite about documentation indexes. #####
 
