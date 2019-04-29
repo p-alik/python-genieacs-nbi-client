@@ -39,6 +39,8 @@ class Test(unittest.TestCase):
         device_id = "xyz-123"
         url = "/".join([self.instance.address, "devices", device_id])
         self.assertEqual(self.instance.devices_url(device_id), url)
+        self.assertEqual(self.instance.devices_url(),
+                         "/".join([self.instance.address, "devices"]))
 
     @unittest.skip(
         "skip Client.dispatch_device_task()")

@@ -28,10 +28,13 @@ class Client:
         """
         return "/".join(["{}", suffix]).format(self.address, *args)
 
-    def devices_url(self, device_id):
+    def devices_url(self, device_id=None):
         """Replace whitespaces by %20 and return devices/device_id."""
+        infix = "devices"
+        if device_id is None:
+            return self.url(infix)
         return self.url(
-            "devices/{}".format("{}".format(device_id).replace(' ', "%20")))
+            "{}/{}".format(infix, "{}".format(device_id).replace(' ', "%20")))
 
     def dispatch_device_task(self, device_id, data):
         """Prepare and execute add task request."""
