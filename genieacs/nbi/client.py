@@ -36,10 +36,13 @@ class Client:
         return self.url(
             "{}/{}".format(infix, "{}".format(device_id).replace(' ', "%20")))
 
-    def dispatch_device_task(self, device_id, data):
+    def dispatch_device_task(self, device_id, data, connection_request=False):
         """Prepare and execute add task request."""
         url = "/".join([self.devices_url(device_id),
-                        "tasks?connection_request"])
+                        "tasks"])
+        if connection_request:
+            url += "?connection_request"
+
         req = build_post_request(url=url, data=data)
         return self.perform_request(req)
 
