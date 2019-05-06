@@ -1,5 +1,6 @@
 """genieacs.test."""
 
+from __future__ import absolute_import
 import unittest
 from genieacs.nbi import client
 
@@ -30,8 +31,7 @@ class Test(unittest.TestCase):
         self.assertEqual(self.instance.url(suffix),
                          "/".join([self.instance.address, suffix]))
         args = ("bar", 1, 2)
-        url = "/".join(["{}", suffix]
-                       ).format(self.instance.address, *args)
+        url = "/".join(["{}", suffix]).format(self.instance.address, *args)
         self.assertEqual(self.instance.url(suffix, *args), url)
 
     def test_devices_url(self):

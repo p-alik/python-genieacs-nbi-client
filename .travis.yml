@@ -2,10 +2,10 @@ dist: xenial
 language: python
 # default 3.6
 # https://changelog.travis-ci.com/upcoming-python-default-version-update-96873
-python: '3.5'
+python: '2.7'
 sudo: true
 env:
-  - TOX_ENV=py35
+  - TOX_ENV=py27
 install:
   - pip install tox
   - pip install coveralls
@@ -19,5 +19,5 @@ after_success:
 
 matrix:
   include:
-    - python: 3.5
-      env: TOX_ENV=py35
+    - python: 2.7
+      env: TOX_ENV=py27

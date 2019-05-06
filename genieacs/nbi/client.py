@@ -1,11 +1,13 @@
 """genieacs.nbi.client."""
 
-from typing import Dict, List
-import urllib.request
+from __future__ import absolute_import
+
+import urllib2
+
 from genieacs.nbi.utils import build_request, build_post_request
 
 
-class Client:
+class Client(object):
     """GenieACS NBI Client."""
 
     address = "http://localhost:7557"
@@ -48,9 +50,9 @@ class Client:
 
     def dispatch_preset(
             self,
-            weight: int,
-            preconditions: Dict,
-            configurations: List[Dict]):
+            weight,
+            preconditions,
+            configurations):
         """Prepare and execute add preset request."""
         data = {
             "weight": weight,
@@ -78,8 +80,8 @@ class Client:
 
     def perform_request(self, request):
         """Execute request and return response content."""
-        opener = urllib.request.build_opener(
-            urllib.request.HTTPHandler(debuglevel=1 if self.verbose else 0)
+        opener = urllib2.build_opener(
+            urllib2.HTTPHandler(debuglevel=1 if self.verbose else 0)
         )
         response = opener.open(request, timeout=self.timeout)
         return response.read()

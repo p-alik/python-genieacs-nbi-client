@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 """setup.py"""
 
+from __future__ import with_statement
+from __future__ import absolute_import
 import os
 import sys
 from setuptools import find_packages
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
+from io import open
 
 class Tox(TestCommand):
     user_options = [('tox-args=', 'a', 'Arguments to pass to tox')]
@@ -39,8 +42,8 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: GNU General Public License (GPL)",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]

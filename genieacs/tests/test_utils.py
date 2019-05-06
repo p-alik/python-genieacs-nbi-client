@@ -1,5 +1,6 @@
 """genieacs.test."""
 
+from __future__ import absolute_import
 import unittest
 from os import getpid
 from genieacs.nbi.utils import build_request, build_post_request
@@ -15,12 +16,12 @@ class Test(unittest.TestCase):
             data = {"foo": getpid(), "method": method}
             req = build_request(
                 url=_url, method=method, data=data)
-            self.assertEqual(req.method, method)
-            self.assertEqual(req.full_url, _url)
+            self.assertEqual(req.get_method(), method)
+            self.assertEqual(req.get_full_url(), _url)
             self.assertIsNotNone(req.data)
 
         req = build_request(url="http://xyz")
-        self.assertEqual(req.method, "GET")
+        self.assertEqual(req.get_method(), "GET")
         self.assertIsNone(req.data)
 
     def test_build_post_request(self):
@@ -28,6 +29,6 @@ class Test(unittest.TestCase):
         _url = "/".join(["http://xyz", "abc"])
         data = {"foo": getpid()}
         req = build_post_request(url=_url, data=data)
-        self.assertEqual(req.method, "POST")
-        self.assertEqual(req.full_url, _url)
+        self.assertEqual(req.get_method(), "POST")
+        self.assertEqual(req.get_full_url(), _url)
         self.assertIsNotNone(req.data)

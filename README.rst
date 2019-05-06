@@ -16,7 +16,7 @@ The package contains Rest API client implementation to communicate with `GenieAC
 Requirements
 ============
 
-* Python 3.5 over
+* Python 2.7
 
 
 Setup
